@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        h1{
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+     <h1>Problem Solving</h1>
+     <h4>Que 1. Find the Smaller Angle
+        PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed 
+        between hour and minute hand at any given time.</h4>
+     <pre>Ans: 
+        var Minimal_Angle = (h, m) => 
+        {
+           let hour_angle = 0.5 * (h * 60 + m);
+                    let minute_angle = 6 * m;
+                    let angle = Math.abs(hour_angle - minute_angle);
+                     let angle1 = Math.min(360 - angle, angle);
+                    return angle1;       
+            
+        };
+         
+        </pre> 
+      <h4>Que 2. Check whether the year is Leap year or not. Write a program which takes an year  N as input from the user and find out whether the given year is a Leap Year or not.</h4> 
+      <pre>Ans:  
+        var Check_Leap = (year) => 
+        {
+         if(((year%4===0)&&(year%100 !==0) )|| (year%400===0) ){
+           return "Leap Year";
+         }else{
+           return "Non Leap Year";
+         }
+          
+        
+        };
+       </pre>   
+       <h4>Que 3. Perfect Number Check.
+        Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.
+         Now, You are given an integer N, write a program to check whether the given number is a Perfect Number or not.</h4>
+        <pre>Ans:
+            var Perfect_Check = (N) => 
+            {
+              let sum=0;
+               for(let i=1;i< N;i++){
+                 if(N%i===0){
+                   sum=sum+i;
+                 }
+               }  
+               if(sum==N || N==1){
+                 return "YES";
+               }else
+               {
+                 return "NO";
+               }
+        
+               };
+        </pre> 
+        <h4>Que 4. Reverse a Number.
+            Write a program which takes a numebr N as input from the user and You need to reverse the number.</h4>
+        <pre>Ans:  
+            var Reverse_Number = (N) => 
+            {
+              let temp=N,rev=0;
+              while(temp != 0){
+                rem=temp%10;
+                rev=rev*10+rem;
+                temp=parseInt(temp/10);
+              }
+              return rev;
+            
+            };
+             
+        </pre>
+        <h4>Que 5. Substring Check.
+            You are given two strings S1 and S2 , you need to check whether the string S1 is a substring of string S2 or not.</h4>
+        <pre>Ans: 
+            var Substring_Check = (S1, S2) => 
+            {
+                 let substr=S1.includes(S2);
+                 if(substr===true){
+                   return "YES";
+                 }else
+                 {
+                   return "NO";
+                 }
+            };
+             
+        </pre>    
+</body>
+</html>
